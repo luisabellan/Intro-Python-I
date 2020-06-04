@@ -5,6 +5,10 @@
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
+def f1_(a, b):
+    return a + b
+
+
 
 print(f1(1, 2))
 
@@ -13,6 +17,12 @@ print(f1(1, 2))
 # Note: Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+
+def f2(*nums):
+    for num in nums:
+        return sum(nums+num)
+
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
