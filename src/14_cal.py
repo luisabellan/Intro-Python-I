@@ -1,4 +1,6 @@
-"""
+# This Python file uses the following encoding: utf-8
+
+""" 
 The Python standard library's 'calendar' module allows you to
 render a calendar to your terminal.
 https://docs.python.org/3.6/library/calendar.html
@@ -24,9 +26,19 @@ optional, as this is a common convention in documentation.
 
 This would mean that from the command line you would call `python3 14_cal.py 4 2015` to 
 print out a calendar for April in 2015, but if you omit either the year or both values, 
-it should use today’s date to get the month and year.
-"""
+it should use today’s date to get the month and year."""
 
 import sys
 import calendar
 from datetime import datetime
+
+print(datetime.today())
+my_date_time = datetime.today()
+default_year = my_date_time.year
+default_month = my_date_time.month
+print(datetime(month=my_date_time.month, year=my_date_time.year, day=my_date_time.day))
+
+
+""" month = input("Month: ")
+year = input("Year: ") """
+
