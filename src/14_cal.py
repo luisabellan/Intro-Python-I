@@ -1,5 +1,48 @@
 # This Python file uses the following encoding: utf-8
 
+
+import sys
+import calendar
+from datetime import datetime
+
+''' If the user doesn't specify any input, your program should
+    print the calendar for the current month. '''
+
+month = datetime.now().month
+year = datetime.now().year
+
+
+if (len(sys.argv) == 2):
+
+    if int(sys.argv[1]) > 0 and int(sys.argv[1]) < 13:
+        ''' If the user specifies one argument, assume they passed in a
+        month and render the calendar for that month of the current year. '''
+
+        month = int(sys.argv[1])
+        year = datetime.now().year
+
+    else:
+        print('Enter month as a number between 1 and 12\n')
+        print('Here is the calendar for the current month: \n')
+
+
+elif (len(sys.argv) == 3):
+    ''' If the user specifies two arguments, assume they passed in
+    both the month and the year. Render the calendar for that
+    month and year. '''
+
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+
+else:
+    print("Enter month and year: ")
+
+
+my_calendar = calendar.TextCalendar().formatmonth(year, month)
+
+print(my_calendar)
+
+
 """ 
 The Python standard library's 'calendar' module allows you to
 render a calendar to your terminal.
@@ -27,18 +70,3 @@ optional, as this is a common convention in documentation.
 This would mean that from the command line you would call `python3 14_cal.py 4 2015` to 
 print out a calendar for April in 2015, but if you omit either the year or both values, 
 it should use today’s date to get the month and year."""
-
-import sys
-import calendar
-from datetime import datetime
-
-print(datetime.today())
-my_date_time = datetime.today()
-default_year = my_date_time.year
-default_month = my_date_time.month
-print(datetime(month=my_date_time.month, year=my_date_time.year, day=my_date_time.day))
-
-
-""" month = input("Month: ")
-year = input("Year: ") """
-
