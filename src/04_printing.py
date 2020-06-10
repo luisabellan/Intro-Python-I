@@ -11,7 +11,15 @@ z = "I like turtles!"
 # Using the printf operator (%), print the following feeding in the values of x,
 # y, and z:
 # x is 10, y is 2.25, z is "I like turtles!"
+import sys
+
+def printf(format, *args):
+    sys.stdout.write(format % args)
+    
+printf('x is %d, y is %.2f, z is "%s" \n', x, y, z)
 
 # Use the 'format' string method to print the same thing
+print('x is {x}, y is {y}, z is "{z}"'.format(x = 10, y = round(2.24552,2), z = "I like turtles!"))
 
 # Finally, print the same thing using an f-string
+print(f'x is {x}, y is {round(y,2)}, z is "{z}"')
